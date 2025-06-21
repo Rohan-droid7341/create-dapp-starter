@@ -1,0 +1,28 @@
+{
+  "name": "create-dapp-starter",
+  "version": "1.0.2",
+  "description": "A CLI to generate a starter template for Next.js/React dapps with wagmi.",
+  "main": "index.js",
+  "bin": {
+    "create-dapp-starter": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cli",
+    "dapp",
+    "web3",
+    "ethereum",
+    "wagmi",
+    "nextjs",
+    "react"
+  ],
+  "author": "Rohan Garg",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "fs-extra": "^11.2.0",
+    "inquirer": "^9.2.16"
+  }
+}
