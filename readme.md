@@ -48,7 +48,7 @@ To contribute to this CLI tool itself:
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/<YOUR_GITHUB_USERNAME>/create-dapp-starter.git
+    git clone https://github.com/Rohan-droid7341/create-dapp-starter.git
     cd create-dapp-starter
     ```
 
