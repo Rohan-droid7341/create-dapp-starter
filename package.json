@@ -1,6 +1,6 @@
 {
   "name": "create-dapp-starter",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A CLI to generate a starter template for Next.js/React dapps with wagmi.",
   "main": "index.js",
   "bin": {
