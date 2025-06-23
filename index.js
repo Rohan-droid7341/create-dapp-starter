@@ -58,8 +58,26 @@ const main = async () => {
   const chainImports = answers.chains.join(', ');
   const wagmiConfigTemplate = `
 import { http, createConfig } from 'wagmi';
-import { ${chainImports} } from 'wagmi/chains';
+import { ${chainImports} , core } from 'wagmi/chains';
 import { walletConnect } from 'wagmi/connectors';
+import { defineChain } from 'viem';
+
+ const coreTestnet = defineChain({
+  id: 1114,
+  name: 'Core Blockchain TestNet',
+  nativeCurrency: {
+    decimals: 18,
+    name: 'Test CORE',
+    symbol: 'tCORE2',
+  },
+  rpcUrls: {
+    default: { http: ['https://rpc.test2.btcs.network'] },
+  },
+  blockExplorers: {
+    default: { name: 'CoreScan Testnet', url: 'https://scan.test2.btcs.network' },
+  },
+  testnet: true,
+});
 
 const projectId = process.env.NEXT_PUBLIC_WC_PROJECT_ID;
 const alchemyKey = process.env.NEXT_PUBLIC_ALCHEMY_KEY;
@@ -67,7 +85,7 @@ const alchemyKey = process.env.NEXT_PUBLIC_ALCHEMY_KEY;
 if (!projectId) throw new Error("WalletConnect Project ID is not set in .env.local");
 if (!alchemyKey) throw new Error("Alchemy Key is not set in .env.local");
 
-const supportedChains = [${chainImports}];
+const supportedChains = [${chainImports},core , coreTestnet];
 const alchemyEndpoints = ${JSON.stringify(alchemyEndpoints, null, 2)};
 
 const transports = Object.fromEntries(
